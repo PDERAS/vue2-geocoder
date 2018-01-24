@@ -75,7 +75,13 @@ export default {
                     addressStr += locationObj.address_line_1 ? locationObj.address_line_1 + ' ' : '';
                     addressStr += locationObj.address_line_2 ? locationObj.address_line_2 + ' ' : '';
                     addressStr += locationObj.city ? locationObj.city + ', ' : '';
-                    addressStr += locationObj.province ? locationObj.province + ', ' : '';
+                    if (locationObj.province || locationObj.postal_code) {
+                        addressStr += locationObj.province ? locationObj.province + ', ' : '';
+                        addressStr += locationObj.postal_code ? locationObj.postal_code + ', ' : '';
+                    } else {
+                        addressStr += locationObj.state ? locationObj.state + ', ' : '';
+                        addressStr += locationObj.zip_code ? locationObj.zip_code + ', ' : '';
+                    }
                     addressStr += locationObj.country ? locationObj.country: '';
                 }
                 return addressStr;
