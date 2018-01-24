@@ -1,0 +1,29 @@
+{
+  "name": "@pderas/vue2-geocoder",
+  "version": "1.0.0",
+  "description": "A vue 2 plugin to interact with google maps api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PDERAS/vue2-geocoder.git"
+  },
+  "keywords": [
+    "vue2",
+    "vue2js",
+    "vue2geocoder",
+    "vue2-geocoder",
+    "geocoder",
+    "googlemaps",
+    "maps",
+    "google"
+  ],
+  "author": "Cody Moorhouse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PDERAS/vue2-geocoder/issues"
+  },
+  "homepage": "https://github.com/PDERAS/vue2-geocoder#readme"
+}
