@@ -16,7 +16,7 @@ General usage: ```Vue.$geocoder.[FUNCTION_NAME]```
 
 ##### Address Example
 ```javascript
-Vue.$geocoder.setMode('address');      // this is default
+Vue.$geocoder.setDefaultMode('address');      // this is default
 var addressObj = {
     address_line_1: '1600 Amphitheatre Parkway',
     address_line_2: '',
@@ -36,7 +36,7 @@ Vue.$geocoder.setDefaultCountryCode('CA');
 
 ##### Lat Lng Example
 ```javascript
-Vue.$geocoder.setMode('lat-lng');      // this is default
+Vue.$geocoder.setDefaultMode('lat-lng');    // this is default
 var latLngObj = {
     lat: 37.421512,
     lng: -122.084101
