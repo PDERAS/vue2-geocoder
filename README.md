@@ -5,7 +5,7 @@ A vue.js plugin to interact with google maps api.
 A vue 2 plugin to interact with google maps api that will query the google maps API to retrieve location results.
 
 ```javascript
-import Geocoder from "vue2-geocoder";
+import Geocoder from "@pderas/vue2-geocoder";
 
 Vue.use(Geocoder, {
     googleMapsApiKey: GOOGLE_MAPS_API_KEY

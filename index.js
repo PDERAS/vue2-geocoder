@@ -1,6 +1,6 @@
 export default {
     install(Vue, options) {
-        Vue.prototype.$geocoder = {
+        Vue.$geocoder = {
             defaultCountryCode: null,
             defaultMode:        'address',
             googleMapsApiKey:   options.googleMapsApiKey,
@@ -94,6 +94,10 @@ export default {
             setDefaultMode(mode) {
                 this.defaultMode = mode == 'address' ? mode : 'lat-lng';
             },
+
+            setMode(mode) {
+                this.setDefaultMode(mode);
+            }
 
             setGoogleMapsApiKey(key) {
                 this.googleMapsApiKey = key;
