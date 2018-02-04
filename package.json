@@ -1,6 +1,6 @@
 {
   "name": "@pderas/vue2-geocoder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A vue 2 plugin to interact with google maps api",
   "main": "index.js",
   "scripts": {
