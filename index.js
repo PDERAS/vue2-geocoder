@@ -95,10 +95,6 @@ export default {
                 this.defaultMode = mode == 'address' ? mode : 'lat-lng';
             },
 
-            setMode(mode) {
-                this.setDefaultMode(mode);
-            }
-
             setGoogleMapsApiKey(key) {
                 this.googleMapsApiKey = key;
             },
