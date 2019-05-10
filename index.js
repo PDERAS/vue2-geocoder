@@ -2,6 +2,7 @@ export default {
     install(Vue, options) {
         Vue.$geocoder = Vue.prototype.$geocoder = {
             defaultCountryCode: null,
+            defaultLanguage: null,
             defaultMode:        'address',
             googleMapsApiKey:   options.googleMapsApiKey,
             googleMapsUrl:      'https://maps.googleapis.com/maps/api/geocode/json',
@@ -30,6 +31,9 @@ export default {
                 url += "?key=" + encodeURIComponent(this.googleMapsApiKey);
                 if (this.defaultCountryCode) {
                     url += "&components=country:" + this.defaultCountryCode;
+                }
+                if (this.defaultLanguage) {
+                    url += "&language=" + this.defaultLanguage;
                 }
 
                 return url;
@@ -91,6 +95,10 @@ export default {
                 this.defaultCountryCode = code;
             },
 
+            setDefaultLanguage(code) {
+                this.defaultLanguage = code;
+            },
+
             setDefaultMode(mode) {
                 this.defaultMode = mode == 'address' ? mode : 'lat-lng';
             },
@@ -101,6 +109,10 @@ export default {
 
             getDefaultCountryCode() {
                 return this.defaultCountryCode;
+            },
+
+            getDefaultLanguage() {
+                return this.defaultLanguage;
             },
 
             getDefaultMode() {

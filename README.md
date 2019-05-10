@@ -1,5 +1,5 @@
 # Vue Geocoder
-A vue.js plugin to interact with google maps api.
+A vue.js plugin to interact with Google Maps API.
 
 ## How to initialize Vue Geocoder
 A vue 2 plugin to interact with google maps api that will query the google maps API to retrieve location results.
@@ -42,6 +42,12 @@ var latLngObj = {
     lng: -122.084101
 }
 Vue.$geocoder.send(latLngObj, response => { console.log(response) });
+```
+
+##### Language
+To get result in your language you should set language code in the geocoder
+```javascript
+Vue.$geocoder.setDefaultLanguage('en') //default is en
 ```
 
 ## License
