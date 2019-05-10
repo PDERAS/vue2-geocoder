@@ -2,7 +2,7 @@
 A vue.js plugin to interact with Google Maps API. See it on [npmjs](https://www.npmjs.com/package/@pderas/vue2-geocoder).
 
 # Installation
-```npm install @pderas/vue2-geocoder```
+```npm install --save @pderas/vue2-geocoder```
 
 ## How to initialize Vue Geocoder
 A vue 2 plugin to interact with google maps api that will query the google maps API to retrieve location results.
