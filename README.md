@@ -8,7 +8,10 @@ A vue 2 plugin to interact with google maps api that will query the google maps 
 import Geocoder from "@pderas/vue2-geocoder";
 
 Vue.use(Geocoder, {
-    googleMapsApiKey: GOOGLE_MAPS_API_KEY
+    defaultCountryCode: null, // e.g. 'CA'
+    defaultLanguage:    null, // e.g. 'en'
+    defaultMode:        'address', // or 'lat-lng'
+    googleMapsApiKey:   GOOGLE_MAPS_API_KEY
 });
 ```
 ## Usage
@@ -36,7 +39,7 @@ Vue.$geocoder.setDefaultCountryCode('CA');
 
 ##### Lat Lng Example
 ```javascript
-Vue.$geocoder.setDefaultMode('lat-lng');    // this is default
+Vue.$geocoder.setDefaultMode('lat-lng');
 var latLngObj = {
     lat: 37.421512,
     lng: -122.084101
@@ -47,7 +50,7 @@ Vue.$geocoder.send(latLngObj, response => { console.log(response) });
 ##### Language
 To get result in your language you should set language code in the geocoder
 ```javascript
-Vue.$geocoder.setDefaultLanguage('en') //default is en
+Vue.$geocoder.setDefaultLanguage('en') // this is default
 ```
 
 ## License
