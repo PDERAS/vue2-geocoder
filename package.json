@@ -8,7 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PDERAS/vue2-geocoder.git"
+    "url": "git@github.com:PDERAS/vue2-geocoder.git"
+  },
+  "publishConfig": {
+      "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "vue2",
