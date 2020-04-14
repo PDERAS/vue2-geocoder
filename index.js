@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     install(Vue, options) {
         Vue.$geocoder = Vue.prototype.$geocoder = {
             defaultCountryCode: options.defaultCountryCode || null,
