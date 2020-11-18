@@ -14,7 +14,6 @@ interface Vue2GeocoderLatLngObj {
 
 type Vue2GeocoderModes = 'lat-lng' | 'address';
 
-// source: https://developers.google.com/maps/coverage
 type Vue2GeocoderCountryCode =
     | 'AF'
     | 'AL'
@@ -273,7 +272,6 @@ type Vue2GeocoderCountryCode =
     | 'ZW'
     | 'AX';
 
-// source: https://developers.google.com/maps/faq#languagesupport
 type Vue2GeocoderLanguageCode =
     | 'ja'
     | 'sq'
@@ -356,28 +354,125 @@ type Vue2GeocoderLanguageCode =
     | 'zu'
     | 'it';
 
+// valid responses
+
+type AddressComponentType =
+    | 'street_address'
+    | 'route'
+    | 'intersection'
+    | 'political'
+    | 'country'
+    | 'administrative_area_level_1'
+    | 'administrative_area_level_2'
+    | 'administrative_area_level_3'
+    | 'administrative_area_level_4'
+    | 'administrative_area_level_5'
+    | 'colloquial_area'
+    | 'locality'
+    | 'sublocality'
+    | 'neighborhood'
+    | 'premise'
+    | 'subpremise'
+    | 'plus_code'
+    | 'postal_code'
+    | 'natural_feature'
+    | 'airport'
+    | 'park'
+    | 'point_of_interest'
+    | 'floor'
+    | 'establishment'
+    | 'landmark'
+    | 'point_of_interest'
+    | 'parking'
+    | 'post_box'
+    | 'postal_town'
+    | 'room'
+    | 'street_number'
+    | 'bus_station';
+
+type LocationType =
+    | 'ROOFTOP'
+    | 'RANGE_INTERPOLATED'
+    | 'GEOMETRIC_CENTER'
+    | 'APPROXIMATE';
+
+interface AddressComponent {
+    long_name: string;
+    short_name: string;
+    types: AddressComponentType[];
+}
+
+interface Bound {
+    lat: number;
+    lng: number;
+}
+
+interface Bounds {
+    northeast: Bound;
+    southwest: Bound;
+}
+
+interface Location {
+    lat: number;
+    lng: number;
+}
+
+interface Viewport {
+    northeast: Bound;
+    southwest: Bound;
+}
+
+interface Geometry {
+    bounds: Bounds;
+    location: Location;
+    location_type: LocationType;
+    viewport: Viewport;
+}
+
+export interface Result {
+    address_components: AddressComponent[];
+    formatted_address: string;
+    geometry: Geometry;
+    place_id: string;
+    types: string[];
+}
+
+type Statuses =
+    | 'ZERO_RESULTS'
+    | 'OK'
+    | 'OVER_DAILY_LIMIT'
+    | 'OVER_QUERY_LIMIT'
+    | 'REQUEST_DENIED'
+    | 'INVALID_REQUEST'
+    | 'UNKNOWN_ERROR';
+
+export interface Response {
+    results: Result[];
+    status: Statuses;
+}
+
 export interface Vue2Geocoder {
     defaultCountryCode?: Vue2GeocoderCountryCode;
     defaultLanguage?: Vue2GeocoderLanguageCode;
     defaultMode: Vue2GeocoderModes;
     googleMapsApiKey: string;
     googleMapsUrl: string;
-    createRequestObject: (url: string, callback?: () => any) => XMLHttpRequest;
+    createRequestObject: (url: string, callback?: () => Response) => XMLHttpRequest;
     getDefaultUrl: () => string;
     send: (
         dataObj: Vue2GeocoderLocationObj | Vue2GeocoderLatLngObj,
-        callback?
+        callback?: () => Response
     ) => void;
 
     toAddressString: (locationObj?: Vue2GeocoderLocationObj) => string;
 
     getGoogleResponseFromAddress: (
         locationObj: Vue2GeocoderLocationObj,
-        callback?: () => any
+        callback?: () => Response
     ) => void;
     getGoogleResponseFromLatLng: (
         latLngObj: Vue2GeocoderLatLngObj,
-        callback?: () => any
+        callback?: () => Response
     ) => void;
 
     setDefaultCountryCode: (code: Vue2GeocoderCountryCode) => void;
