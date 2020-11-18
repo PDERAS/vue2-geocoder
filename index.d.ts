@@ -14,6 +14,7 @@ interface Vue2GeocoderLatLngObj {
 
 type Vue2GeocoderModes = 'lat-lng' | 'address';
 
+// source: https://developers.google.com/maps/coverage
 type Vue2GeocoderCountryCode =
     | 'AF'
     | 'AL'
@@ -272,6 +273,7 @@ type Vue2GeocoderCountryCode =
     | 'ZW'
     | 'AX';
 
+// source: https://developers.google.com/maps/faq#languagesupport
 type Vue2GeocoderLanguageCode =
     | 'ja'
     | 'sq'
@@ -354,8 +356,7 @@ type Vue2GeocoderLanguageCode =
     | 'zu'
     | 'it';
 
-// valid responses
-
+// source: https://developers.google.com/maps/documentation/geocoding/overview#Types
 type AddressComponentType =
     | 'street_address'
     | 'route'
@@ -390,6 +391,7 @@ type AddressComponentType =
     | 'street_number'
     | 'bus_station';
 
+// source: https://developers.google.com/maps/documentation/geocoding/overview#results
 type LocationType =
     | 'ROOFTOP'
     | 'RANGE_INTERPOLATED'
@@ -437,6 +439,7 @@ export interface Result {
     types: string[];
 }
 
+// source: https://developers.google.com/maps/documentation/geocoding/overview#StatusCodes
 type Statuses =
     | 'ZERO_RESULTS'
     | 'OK'
