@@ -369,7 +369,7 @@ export interface Vue2Geocoder {
         callback?
     ) => void;
 
-    toAddressString: (locationObj: Vue2GeocoderLocationObj) => string;
+    toAddressString: (locationObj?: Vue2GeocoderLocationObj) => string;
 
     getGoogleResponseFromAddress: (
         locationObj: Vue2GeocoderLocationObj,
