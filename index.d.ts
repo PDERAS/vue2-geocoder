@@ -460,22 +460,22 @@ export interface Vue2Geocoder {
     defaultMode: Vue2GeocoderModes;
     googleMapsApiKey: string;
     googleMapsUrl: string;
-    createRequestObject: (url: string, callback?: () => Response) => XMLHttpRequest;
+    createRequestObject: (url: string, callback?: () => Response | Promise<Response>) => XMLHttpRequest;
     getDefaultUrl: () => string;
     send: (
         dataObj: Vue2GeocoderLocationObj | Vue2GeocoderLatLngObj,
-        callback?: () => Response
+        callback?: () => Response | Promise<Response>
     ) => void;
 
     toAddressString: (locationObj?: Vue2GeocoderLocationObj) => string;
 
     getGoogleResponseFromAddress: (
         locationObj: Vue2GeocoderLocationObj,
-        callback?: () => Response
+        callback?: () => Response | Promise<Response>
     ) => void;
     getGoogleResponseFromLatLng: (
         latLngObj: Vue2GeocoderLatLngObj,
-        callback?: () => Response
+        callback?: () => Response | Promise<Response>
     ) => void;
 
     setDefaultCountryCode: (code: Vue2GeocoderCountryCode) => void;
