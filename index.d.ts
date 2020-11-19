@@ -275,6 +275,7 @@ type Vue2GeocoderCountryCode =
 
 // source: https://developers.google.com/maps/faq#languagesupport
 type Vue2GeocoderLanguageCode =
+    | 'af'
     | 'ja'
     | 'sq'
     | 'kn'
