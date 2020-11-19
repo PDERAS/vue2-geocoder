@@ -437,7 +437,7 @@ export interface Result {
     formatted_address: string;
     geometry: Geometry;
     place_id: string;
-    types: string[];
+    types: AddressType[];
 }
 
 // source: https://developers.google.com/maps/documentation/geocoding/overview#StatusCodes
