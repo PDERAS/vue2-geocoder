@@ -358,7 +358,7 @@ type Vue2GeocoderLanguageCode =
     | 'it';
 
 // source: https://developers.google.com/maps/documentation/geocoding/overview#Types
-type AddressComponentType =
+type AddressType =
     | 'street_address'
     | 'route'
     | 'intersection'
